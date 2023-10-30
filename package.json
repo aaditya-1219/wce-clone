@@ -13,7 +13,9 @@
   "dependencies": {
     "express": "^4.18.2",
     "mongodb": "^6.2.0",
+    "netlify-lambda": "^2.0.16",
     "nodemon": "^3.0.1",
+    "serverless-http": "^3.2.0",
     "spinkit": "^2.0.1"
   },
   "devDependencies": {

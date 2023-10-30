@@ -6,11 +6,7 @@ const port = 3000
 const MongoClient = require('mongodb').MongoClient
 const url = "mongodb+srv://aaditya-1219:mKYPr7BkweCQYtWv@cluster0.tllkell.mongodb.net/"
 
-app.use(express.static('static'))
-
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'index.html')));
-
 
 app.get('/', async(req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));

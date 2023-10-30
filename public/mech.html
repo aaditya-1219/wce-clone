@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Walchand College of Engineering, Sangli</title>
-		<link rel="stylesheet" href="/styles.css" />
+		<link rel="stylesheet" href="../static/styles.css" />
 	</head>
 	<body>
 		<nav>
 			<div class="top--nav">
-				<img src="/img/logo.png" alt="" />
+				<img src="/static/img/logo.png" alt="" />
 				<div class="headings">
 					<h1>Walchand College of Engineering, Sangli</h1>
 					<h2>वालचंद महाविदयालय</h2>
@@ -30,13 +30,13 @@
 		<div class="loader-container">
 			<div class="loader"></div>
 		</div>
-		<main class="container" style="display: none;">
+		<main class="container" style="display: none">
 			<h3 class="heading">MECHANICAL DEPARTMENT</h3>
 			<div class="dept-container">
-				<img src="/img/mech.jpg" alt="" />
+				<img src="/static/img/mech.jpg" alt="" />
 				<p class="para1"></p>
-				<br>
-				<p class="para2" style="display: none;"></p>
+				<br />
+				<p class="para2" style="display: none"></p>
 				<button class="show-more">Show More</button>
 			</div>
 		</main>
@@ -48,8 +48,8 @@
 			const showMoreBtn = document.querySelector(".show-more");
 			const para1 = document.querySelector(".para1");
 			const para2 = document.querySelector(".para2");
-			const loaderContainer = document.querySelector('.loader-container')
-			const loader = document.querySelector('.loader')
+			const loaderContainer = document.querySelector(".loader-container");
+			const loader = document.querySelector(".loader");
 			showMoreBtn.addEventListener("click", () => {
 				if (showMoreBtn.textContent == "Show Less") {
 					showMoreBtn.textContent = "Show More";
@@ -60,7 +60,7 @@
 				}
 			});
 
-			const desc = []
+			const desc = [];
 			document.addEventListener("DOMContentLoaded", () => {
 				fetch(`http://localhost:3000/mech/data`)
 					.then((response) => {
@@ -71,13 +71,14 @@
 					})
 					.then((data) => {
 						console.log(data);
-						desc.push(data.p1)
-						desc.push(data.p2)
-						loaderContainer.style.display = "none"
-						loader.style.display = "none"
-						document.querySelector(".container").style.display = "flex";
-						para1.textContent = desc[0]
-						para2.textContent = desc[1]
+						desc.push(data.p1);
+						desc.push(data.p2);
+						loaderContainer.style.display = "none";
+						loader.style.display = "none";
+						document.querySelector(".container").style.display =
+							"flex";
+						para1.textContent = desc[0];
+						para2.textContent = desc[1];
 					})
 					.catch((error) => {
 						console.error("Fetch error:", error);
